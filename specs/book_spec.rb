@@ -32,4 +32,8 @@ class TestBook < Minitest::Test
     assert_equal(1, @book.id)
   end
 
+  def test_markup
+    assert_equal(11.50, @book.markup)
+  end
+
 end
