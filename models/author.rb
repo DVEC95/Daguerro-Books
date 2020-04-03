@@ -32,6 +32,10 @@ class Author
     SQLRunner.run(sql, values)
   end
 
+  def fullname()
+    return "#{first_name} #{last_name}"
+  end
+
   def self.delete_all()
     sql = "DELETE FROM authors"
     SQLRunner.run(sql)
@@ -43,8 +47,12 @@ class Author
     return authors.map {|author| Author.new(author)}
   end
 
-  def fullname()
-    return "#{first_name} #{last_name}"
+  def self.find(id)
+    sql = "SELECT FROM authors WHERE id = $1"
+    values = [id]
+    author = SQLRunner.run(sql, values).first()
+    return nil if author == nil
+    return Author.new(author)
   end
 
 end
