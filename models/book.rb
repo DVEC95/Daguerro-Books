@@ -37,6 +37,10 @@ class Book
     SQLRunner.run(sql, values)
   end
 
+  def markup()
+    return @price - @cost
+  end
+
   def self.delete_all()
     sql = "DELETE FROM books"
     SQLRunner.run(sql)
