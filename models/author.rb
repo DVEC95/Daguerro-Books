@@ -43,4 +43,8 @@ class Author
     return authors.map {|author| Author.new(author)}
   end
 
+  def fullname()
+    return "#{first_name} #{last_name}"
+  end
+
 end
