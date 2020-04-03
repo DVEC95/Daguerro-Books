@@ -42,4 +42,10 @@ class Book
     SQLRunner.run(sql)
   end
 
+  def self.all()
+    sql = "SELECT * FROM books"
+    books = SQLRunner.run(sql)
+    return books.map {|book| Book.new(book)}
+  end
+
 end
