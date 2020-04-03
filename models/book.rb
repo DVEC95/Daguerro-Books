@@ -48,4 +48,12 @@ class Book
     return books.map {|book| Book.new(book)}
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM books WHERE id = $1"
+    values = [id]
+    book = SQLRunner.run(sql, values).first()
+    return nil if book == nil
+    return Book.new(book)
+  end
+
 end
