@@ -16,5 +16,6 @@ CREATE TABLE books(
   genre VARCHAR(255),
   cost DECIMAL(10, 2),
   price DECIMAL(10, 2),
-  quantity INT
+  quantity INT,
+  author_id INT REFERENCES authors(id)
 );
