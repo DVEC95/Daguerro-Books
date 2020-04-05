@@ -48,11 +48,24 @@ class Author
   end
 
   def self.find(id)
-    sql = "SELECT FROM authors WHERE id = $1"
+    sql = "SELECT * FROM authors WHERE id = $1"
     values = [id]
     author = SQLRunner.run(sql, values).first()
     return nil if author == nil
     return Author.new(author)
+  end
+
+  def books()
+    sql = "SELECT * FROM books WHERE books.author_id = $1"
+    values = [@id]
+    books =  SQLRunner.run(sql, values)
+    return books.map {|book| Book.new(book)}
+  end
+
+  def delete_books()
+    sql = "DELETE FROM books WHERE books.author_id = $1"
+    values = [@id]
+    SQLRunner.run(sql, values)
   end
 
 end
