@@ -1,0 +1,14 @@
+<hr>
+<h2>Name: <%= @author.fullname %></h2>
+<h2>Active: <% if @author.active = true %>
+            Yes
+            <% elsif @author.active = false %>
+            No
+            <% end %>
+</h2>
+
+<button onclick="window.location.href = '/authors/<%= @author.id.to_i %>/edit'">Edit Author</button>
+
+<form action="/authors/<%= @author.id %>/delete" method="post">
+<button type="submit">Delete Author</button>
+</form>
