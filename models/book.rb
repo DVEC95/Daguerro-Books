@@ -1,4 +1,5 @@
 require_relative("../db/sqlrunner")
+require_relative("./author")
 
 class Book
 
@@ -38,7 +39,8 @@ class Book
   end
 
   def markup()
-    return @price - @cost
+    markup = @price.to_f - @cost.to_f
+    return '%.2f' % markup
   end
 
   def self.delete_all()
@@ -58,6 +60,13 @@ class Book
     book = SQLRunner.run(sql, values).first()
     return nil if book == nil
     return Book.new(book)
+  end
+
+  def author()
+    sql = "SELECT * FROM authors WHERE id = $1"
+    values = [@author_id]
+    author = SQLRunner.run(sql, values).first
+    return author['first_name'] + " " + author['last_name']
   end
 
 end
