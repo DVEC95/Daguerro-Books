@@ -36,7 +36,7 @@ book1 = Book.new({
   'genre' => 'Fantasy',
   'cost' => 8.50,
   'price' => 20.00,
-  'quantity' => 10,
+  'quantity' => 0,
   'author_id' => author1.id
   })
 book1.save()
@@ -48,7 +48,7 @@ book2 = Book.new({
   'genre' => 'Dystopian',
   'cost' => 2.00,
   'price' => 7.99,
-  'quantity' => 20,
+  'quantity' => 2,
   'author_id' => author2.id
   })
 book2.save()
@@ -60,7 +60,7 @@ book3 = Book.new({
   'genre' => 'Adventure',
   'cost' => 1.00,
   'price' => 5.99,
-  'quantity' => 15,
+  'quantity' => 1,
   'author_id' => author3.id
   })
 book3.save()
