@@ -1,0 +1,17 @@
+<hr>
+  <h2>Title: <%= @book.title %></h2>
+  <h2>Author: <%= @book.author %> </h2>
+  <h2>Format: <%= @book.format %></h2>
+  <h2>Genre: <%= @book.genre %></h2>
+  <h3>Buying Cost: £<%= @book.cost %> </h3>
+  <h3>Selling Price: £<%= @book.price %> </h3>
+  <h3>Markup: £<%= @book.markup %> </h3>
+  <h2>Stock: <%= @book.quantity %></h2>
+    <% if @book.quantity.to_i > 2 %>
+      <h2 class="in_stock">IN STOCK</h2>
+    <% elsif @book.quantity.to_i <= 2 && @book.quantity.to_i > 0 %>
+      <p class="low_stock">LOW STOCK</p>
+    <% else @book.quantity.to_i == 0 %>
+      <h2>OUT OF STOCK</h2>
+    <% end %>
+  <h6>Synopsis: <%= @book.synopsis %></h6>
