@@ -26,7 +26,7 @@ end
 #CREATE
 post "/books" do
   new_book = Book.new(params)
-  new_book.save()
+  new_book.save
   erb(:"books/create")
 end
 
