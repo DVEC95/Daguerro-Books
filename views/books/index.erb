@@ -11,7 +11,7 @@
     <% if book.quantity.to_i > 2 %>
       <h2 class="in_stock">IN STOCK</h2>
     <% elsif book.quantity.to_i <= 2 && book.quantity.to_i > 0 %>
-      <p class="low_stock">LOW STOCK</p>
+      <h2 class="low_stock">LOW STOCK</h2>
     <% else book.quantity.to_i == 0 %>
       <h2>OUT OF STOCK</h2>
     <% end %>

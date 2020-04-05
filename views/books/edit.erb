@@ -1,7 +1,13 @@
-<form class="books" action="/books" method="post">
+<form class="books" action="/books/<%= @book.id %>" method="post">
 
   <label for="title">Title:</label>
     <input type="text" name="title" value="<%= @book.title %>">
+
+    <label for="author">Author:</label>
+      <select id="author" name="author_id">
+          <option value="<%= @book.author_id %>">
+        <%=  @book.author %>
+          </option>
 
   <label for="synopsis">Synopsis:</label>
     <textarea name="synopsis" rows="4" cols="40"> <%= @book.synopsis %> </textarea>
@@ -13,17 +19,17 @@
     </select>
 
   <label for="genre">Genre:</label>
-    <input type="text" name="genre" value="genre">
+    <input type="text" name="genre" value="<%= @book.genre %>">
 
   <label for="cost">Buying Cost (per unit):</label>
-    <input type="number" required name="cost" min="0" value="0" step=".01">
+    <input type="number" required name="cost" min="0" value="<%= @book.cost %>" step=".01">
 
   <label for="price">Selling Price:</label>
-    <input type="number" required name="price" min="0" value="0" step=".01">
+    <input type="number" required name="price" min="0" value="<%= @book.price %>" step=".01">
 
   <label for="quantity">Quantity:</label>
-    <input type="number" required name="quantity" min="0" value="0" step=".01">
+    <input type="number" required name="quantity" min="0" value="<%= @book.quantity %>" step="">
 
-  <input type='submit' value="Submit Book"/>
+  <input type='submit' value="Update Book"/>
 
 </form>
