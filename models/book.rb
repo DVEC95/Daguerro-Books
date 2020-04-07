@@ -91,7 +91,8 @@ class Book
   def self.all_genres()
     sql = "SELECT books.genre FROM books;"
     genres_all = SQLRunner.run(sql)
-    return genres_all.map{|genre| genre.values}.uniq
+    genres = genres_all.map{|genre| genre.values}.uniq!
+    return genres.flatten
   end
 
 end
