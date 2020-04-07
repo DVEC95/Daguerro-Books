@@ -1,0 +1,55 @@
+<nav>
+  <ul>
+    <li style="float:right"><a href="/">Home</a></li>
+    <li><a href="/books">Books</a></li>
+    <li><a href="/authors">Authors</a></li>
+    <li><a href="/books/new">Add New Book</a></li>
+    <li><a href="/authors/new">Add New Author</a></li>
+    <li style="float:right"><a class="active" href="/books/desc">Sort by title (Z-A)</a></li>
+    <li style="float:right"><a href="/books/asc">Sort by title (A-Z)</a></li>
+  </ul>
+</nav>
+
+<br>
+
+<table>
+
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Format</th>
+    <th>Genre</th>
+    <th>Buying Cost</th>
+    <th>Selling Price</th>
+    <th>Markup</th>
+    <th>Quantity</th>
+    <th>In Stock?</th>
+  </tr>
+
+  <% for book in @books %>
+
+  <% if book.author_active == "t" %>
+
+    <tr>
+      <th><%= book.title %></th>
+      <th><%= book.author %> </th>
+      <th><%= book.format %></th>
+      <th><%= book.genre %></th>
+      <th>£<%= book.cost %> </th>
+      <th>£<%= book.price %></th>
+      <th>£<%= book.markup %> </th>
+      <th><%= book.quantity %></th>
+        <% if book.quantity.to_i > 2 %>
+          <th class="in_stock">IN STOCK</th>
+        <% elsif book.quantity.to_i <= 2 && book.quantity.to_i > 0 %>
+          <th class="low_stock">LOW STOCK</th>
+        <% else book.quantity.to_i == 0 %>
+          <th class="no_stock">OUT OF STOCK</th>
+          <% end %>
+      <th><button onclick="window.location.href = '/books/<%= book.id.to_i %>'">View Book</button></th>
+    </tr>
+
+<% end %>
+
+<% end %>
+</table>

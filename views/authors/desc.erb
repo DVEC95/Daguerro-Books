@@ -1,0 +1,36 @@
+<nav>
+  <ul>
+    <li style="float:right"><a href="/">Home</a></li>
+    <li><a href="/books">Books</a></li>
+    <li><a class="active" href="/authors">Authors</a></li>
+    <li><a href="/books/new">Add New Book</a></li>
+    <li><a href="/authors/new">Add New Author</a></li>
+    <li style="float:right"><a href="/authors/desc">Sort by name (Z-A)</a></li>
+    <li style="float:right"><a href="/authors/asc">Sort by name (A-Z)</a></li>
+  </ul>
+</nav>
+
+<br>
+
+<table>
+
+<tr>
+  <th>Name</th>
+  <th>Active?</th>
+</tr>
+
+<% for author in @authors %>
+
+<tr>
+  <th><%= author.fullname() %></th>
+  <% if author.active == "t" %>
+    <th>Yes</th>
+  <% elsif author.active == "f" %>
+    <th>No</th>
+  <% end %>
+  <th><button onclick="window.location.href = '/authors/<%= author.id.to_i %>'">View Author</button></th>
+</tr>
+
+<% end %>
+
+</table>
