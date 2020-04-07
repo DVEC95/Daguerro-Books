@@ -10,6 +10,16 @@ get "/authors" do
   erb(:"authors/index")
 end
 
+get "authors/asc" do
+  @authors = Author.sort_by_name_asc()
+  erb(:"authors/asc")
+end
+
+get "authors/desc" do
+  @authors = Author.sort_by_name_desc()
+  erb(:"authors/desc")
+end
+
 #NEW
 get "/authors/new" do
   erb(:"authors/new")
@@ -17,6 +27,7 @@ end
 
 #SHOW
 get "/authors/:id" do
+  @books = Book.all()
   id = params['id'].to_i
   @author = Author.find(id)
   erb(:"authors/show")
