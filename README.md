@@ -23,5 +23,13 @@ A stocktaking application with CRUD methodologies, designed for use with data re
   ```
 6. Navigate to local host using browser.
   ```
-    localhost:4567)
+    localhost:4567
   ```
+
+## Built With
+
+* Ruby
+* PostgreSQL
+* Sinatra
+* Pg
+* Pry
