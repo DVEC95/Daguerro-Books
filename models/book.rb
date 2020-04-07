@@ -88,5 +88,10 @@ class Book
     return books.map {|book| Book.new(book)}
   end
 
+  def self.all_genres()
+    sql = "SELECT books.genre FROM books;"
+    genres_all = SQLRunner.run(sql)
+    return genres_all.map{|genre| genre.values}.uniq
+  end
 
 end
