@@ -10,12 +10,12 @@ get "/authors" do
   erb(:"authors/index")
 end
 
-get "authors/asc" do
+get "/authors/asc" do
   @authors = Author.sort_by_name_asc()
   erb(:"authors/asc")
 end
 
-get "authors/desc" do
+get "/authors/desc" do
   @authors = Author.sort_by_name_desc()
   erb(:"authors/desc")
 end
