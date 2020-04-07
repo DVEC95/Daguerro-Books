@@ -1,23 +1,61 @@
-<hr>
-  <h2>Title: <%= @book.title %></h2>
-  <h2>Author: <%= @book.author %> </h2>
-  <h2>Format: <%= @book.format %></h2>
-  <h2>Genre: <%= @book.genre %></h2>
-  <h3>Buying Cost: £<%= @book.cost %> </h3>
-  <h3>Selling Price: £<%= @book.price %> </h3>
-  <h3>Markup: £<%= @book.markup %> </h3>
-  <h2>Stock: <%= @book.quantity %></h2>
-    <% if @book.quantity.to_i > 2 %>
-      <h2 class="in_stock">IN STOCK</h2>
-    <% elsif @book.quantity.to_i <= 2 && @book.quantity.to_i > 0 %>
-      <p class="low_stock">LOW STOCK</p>
-    <% else @book.quantity.to_i == 0 %>
-      <h2>OUT OF STOCK</h2>
-    <% end %>
-  <h6>Synopsis: <%= @book.synopsis %></h6>
+<nav>
+  <ul>
+    <li style="float:right"><a href="/">Home</a></li>
+    <li><a href="/books">Books</a></li>
+    <li><a href="/authors">Authors</a></li>
+    <li><a href="/books/new">Add New Book</a></li>
+    <li><a href="/authors/new">Add New Author</a></li>
+    <li style="float:right"><a href="/books/atoz">Sort by title (A-Z)</a></li>
+  </ul>
+</nav>
 
-<button onclick="window.location.href = '/books/<%= @book.id.to_i %>/edit'">Edit Book</button>
+<br>
 
-<form action="/books/<%= @book.id %>/delete" method="post">
-<button type="submit">Delete Book</button>
-</form>
+<table>
+
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Format</th>
+    <th>Genre</th>
+    <th>Buying Cost</th>
+    <th>Selling Price</th>
+    <th>Markup</th>
+    <th>Quantity</th>
+    <th>In Stock?</th>
+  </tr>
+
+  <tr>
+    <th><%= @book.title %></th>
+    <th><a href="/authors/<%= @book.author_id %>"><%= @book.author %></a></th>
+    <th><%= @book.format %></th>
+    <th><%= @book.genre %></th>
+    <th>£<%= @book.cost %> </th>
+    <th>£<%= @book.price %></th>
+    <th>£<%= @book.markup %> </th>
+    <th><%= @book.quantity %></th>
+    <th><% if @book.quantity.to_i > 2 %>
+            IN STOCK
+        <% elsif @book.quantity.to_i <= 2 && @book.quantity.to_i > 0 %>
+            LOW STOCK
+        <% else @book.quantity.to_i == 0 %>
+            OUT OF STOCK
+        <% end %></th>
+  </tr>
+
+  <tr>
+    <th>Synopsis:</th>
+    <th><%= @book.synopsis %></th>
+  </tr>
+
+  <th>
+    <button onclick="window.location.href = '/books/<%= @book.id.to_i %>/edit'">Edit Book</button>
+  </th>
+
+  <th>
+    <form action="/books/<%= @book.id %>/delete" method="post">
+      <button type="submit">Delete Book</button>
+    </form>
+  </th>
+
+</table>
