@@ -69,4 +69,24 @@ class Book
     return author['first_name'] + " " + author['last_name']
   end
 
+  def author_active()
+    sql = "SELECT * FROM authors WHERE id = $1"
+    values = [@author_id]
+    author = SQLRunner.run(sql, values).first
+    return author['active']
+  end
+
+  def self.sort_by_title_asc()
+    sql = "SELECT * FROM books ORDER BY title ASC"
+    books = SQLRunner.run(sql)
+    return books.map {|book| Book.new(book)}
+  end
+
+  def self.sort_by_title_desc()
+    sql = "SELECT * FROM books ORDER BY title DESC;"
+    books = SQLRunner.run(sql)
+    return books.map {|book| Book.new(book)}
+  end
+
+
 end
