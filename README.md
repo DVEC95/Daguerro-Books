@@ -1,6 +1,6 @@
 # Book Shop
 
-A stocktaking application with CRUD methodologies, designed for use with data related to books.
+A stocktaking application with CRUD methodologies and RESTful routes, designed for use with data related to books.
 
 ## How to Run
 
