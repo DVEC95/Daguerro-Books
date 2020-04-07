@@ -68,4 +68,16 @@ class Author
     SQLRunner.run(sql, values)
   end
 
+  def self.sort_by_name_asc()
+    sql = "SELECT * FROM authors ORDER BY last_name ASC"
+    authors = SQLRunner.run(sql)
+    return authors.map {|author| Author.new(author)}
+  end
+
+  def self.sort_by_name_desc()
+    sql = "SELECT * FROM authors ORDER BY last_name DESC"
+    authors = SQLRunner.run(sql)
+    return authors.map {|author| Author.new(author)}
+  end
+
 end
