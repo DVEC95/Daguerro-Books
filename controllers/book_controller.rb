@@ -10,9 +10,20 @@ get "/books" do
   erb(:"books/index")
 end
 
+get "/books/asc" do
+  @books = Book.sort_by_title_asc()
+  erb(:"books/asc")
+end
+
+get "/books/desc" do
+  @books = Book.sort_by_title_desc()
+  erb(:"books/desc")
+end
+
 #NEW
 get "/books/new" do
   @authors = Author.all()
+  @books = Book.all()
   erb(:"books/new")
 end
 
