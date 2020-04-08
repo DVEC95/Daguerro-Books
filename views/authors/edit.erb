@@ -13,6 +13,12 @@
 
 <form class="authors" action="/authors/ <%= @author.id %>" method="post">
 
+  <section>
+
+  <h2>Edit Author</h2>
+
+  <fieldset>
+
   <label for="first_name">First Name:</label>
     <input type="text" name="first_name" value="<%= @author.first_name %>">
 
@@ -21,11 +27,15 @@
 
   <label for="active">Active?</label>
   <select name="active">
-    <option value="true" label="true">Yes</option>
-    <option value="false" label="false">No</option>
+    <option value="true" label="Yes">Yes</option>
+    <option value="false" label="No">No</option>
   </select>
 
   <input type='submit' value="Update Author"/>
   <button onclick="window.location.href = '/authors/<%= @author.id.to_i %>'">Go back</button>
+
+  </fieldset>
+
+  </section>
 
 </form>
