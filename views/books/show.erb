@@ -6,7 +6,6 @@
     <li><a href="/genres">Genres</a></li>
     <li><a href="/books/new">Add New Book</a></li>
     <li><a href="/authors/new">Add New Author</a></li>
-    <li style="float:right"><a href="/books/atoz">Sort by title (A-Z)</a></li>
   </ul>
 </nav>
 
@@ -35,18 +34,13 @@
     <th>£<%= @book.price %></th>
     <th>£<%= @book.markup %> </th>
     <th><%= @book.quantity %></th>
-    <th><% if @book.quantity.to_i > 2 %>
-            IN STOCK
-        <% elsif @book.quantity.to_i <= 2 && @book.quantity.to_i > 0 %>
-            LOW STOCK
-        <% else @book.quantity.to_i == 0 %>
-            OUT OF STOCK
-        <% end %></th>
-  </tr>
-
-  <tr>
-    <th>Synopsis:</th>
-    <th><%= @book.synopsis %></th>
+      <% if @book.quantity.to_i > 2 %>
+        <th class="in_stock">IN STOCK</th>
+      <% elsif @book.quantity.to_i <= 2 && @book.quantity.to_i > 0 %>
+        <th class="low_stock">LOW STOCK</th>
+      <% else @book.quantity.to_i == 0 %>
+        <th class="no_stock">OUT OF STOCK</th>
+      <% end %>
   </tr>
 
   <th>
