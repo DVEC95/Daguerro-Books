@@ -11,7 +11,6 @@ CREATE TABLE authors(
 CREATE TABLE books(
   id SERIAL PRIMARY KEY,
   title VARCHAR(255),
-  synopsis VARCHAR(500),
   format VARCHAR(255),
   genre VARCHAR(255),
   cost DECIMAL(10, 2),
