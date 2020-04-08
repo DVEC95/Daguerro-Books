@@ -17,7 +17,7 @@
     <th>Name</th>
     <th>Active?</th>
     <th>
-
+      <button onclick="window.location.href = '/authors/<%= @author.id.to_i %>/edit'">Edit Author</button>
     </th>
   </tr>
 
@@ -28,9 +28,7 @@
     <% elsif @author.active == "f" %>
       <th>No</th>
     <% end %>
-    <th>
-      <button onclick="window.location.href = '/authors/<%= @author.id.to_i %>/edit'">Edit Author</button>
-    </th>
+
     <th>
       <form action="/authors/<%= @author.id %>/delete" method="post">
         <button type="submit">Delete Author</button>
