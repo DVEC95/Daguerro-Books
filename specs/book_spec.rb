@@ -9,7 +9,6 @@ class TestBook < Minitest::Test
   def setup
     @book = Book.new({
       'title' => 'The Lord of the Rings',
-      'synopsis' => 'The future of civilization rests in the fate of the One Ring, which has been lost for centuries...',
       'format' => 'Hardback',
       'genre' => 'Fantasy',
       'cost' => 8.50,
@@ -22,7 +21,6 @@ class TestBook < Minitest::Test
 
   def test_return_data
     assert_equal('The Lord of the Rings', @book.title)
-    assert_equal('The future of civilization rests in the fate of the One Ring, which has been lost for centuries...', @book.synopsis)
     assert_equal('Hardback', @book.format)
     assert_equal('Fantasy', @book.genre)
     assert_equal(8.50, @book.cost)
