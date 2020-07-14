@@ -42,12 +42,12 @@ author5 = Author.new({
   })
 author5.save()
 
-author6 = Author.new({
-  "first_name" => "Leo",
-  "last_name" => "Tolstoy",
-  "active" => true
-  })
-author6.save()
+# author6 = Author.new({
+#   "first_name" => "Leo",
+#   "last_name" => "Tolstoy",
+#   "active" => true
+#   })
+# author6.save()
 
 author7 = Author.new({
   "first_name" => "Robert Louis",
@@ -77,19 +77,19 @@ author10 = Author.new({
   })
 author10.save()
 
-author11 = Author.new({
-  "first_name" => "Agatha",
-  "last_name" => "Cristie",
-  "active" => true
-  })
-author11.save()
-
-author12 = Author.new({
-  "first_name" => "Meryvn",
-  "last_name" => "Peake",
-  "active" => true
-  })
-author12.save()
+# author11 = Author.new({
+#   "first_name" => "Agatha",
+#   "last_name" => "Cristie",
+#   "active" => true
+#   })
+# author11.save()
+#
+# author12 = Author.new({
+#   "first_name" => "Meryvn",
+#   "last_name" => "Peake",
+#   "active" => true
+#   })
+# author12.save()
 
 author13 = Author.new({
   "first_name" => "Douglas",
@@ -112,12 +112,12 @@ author15 = Author.new({
   })
 author15.save()
 
-author16 = Author.new({
-  "first_name" => "Ursula K.",
-  "last_name" => "Le Guin",
-  "active" => true
-  })
-author16.save()
+# author16 = Author.new({
+#   "first_name" => "Ursula K.",
+#   "last_name" => "Le Guin",
+#   "active" => true
+#   })
+# author16.save()
 
 author17 = Author.new({
   "first_name" => "Herman",
@@ -147,12 +147,12 @@ author20 = Author.new({
   })
 author20.save()
 
-author21 = Author.new({
-  "first_name" => "T. H.",
-  "last_name" => "White",
-  "active" => true
-  })
-author21.save()
+# author21 = Author.new({
+#   "first_name" => "T. H.",
+#   "last_name" => "White",
+#   "active" => true
+#   })
+# author21.save()
 
 #BOOK DATA -----------
 book1 = Book.new({
@@ -232,16 +232,16 @@ book7 = Book.new({
   })
 book7.save()
 
-book8 = Book.new({
-  'title' => 'War & Peace',
-  'format' => 'Paperback',
-  'genre' => 'Epic',
-  'cost' => 4.50,
-  'price' => 11.99,
-  'quantity' => 5,
-  'author_id' => author6.id
-  })
-book8.save()
+# book8 = Book.new({
+#   'title' => 'War & Peace',
+#   'format' => 'Paperback',
+#   'genre' => 'Epic',
+#   'cost' => 4.50,
+#   'price' => 11.99,
+#   'quantity' => 5,
+#   'author_id' => author6.id
+#   })
+# book8.save()
 
 book9 = Book.new({
   'title' => 'Treasure Island',
@@ -298,27 +298,27 @@ book13 = Book.new({
   })
 book13.save()
 
-book14 = Book.new({
-  'title' => 'And Then There Were None',
-  'format' => 'Paperback',
-  'genre' => 'Mystery',
-  'cost' => 2.50,
-  'price' => 6.99,
-  'quantity' => 2,
-  'author_id' => author11.id
-  })
-book14.save()
+# book14 = Book.new({
+#   'title' => 'And Then There Were None',
+#   'format' => 'Paperback',
+#   'genre' => 'Mystery',
+#   'cost' => 2.50,
+#   'price' => 6.99,
+#   'quantity' => 2,
+#   'author_id' => author11.id
+#   })
+# book14.save()
 
-book15 = Book.new({
-  'title' => 'The Gormenghast Trilogy',
-  'format' => 'Hardback',
-  'genre' => 'Fantasy',
-  'cost' => 6.50,
-  'price' => 19.99,
-  'quantity' => 0,
-  'author_id' => author12.id
-  })
-book15.save()
+# book15 = Book.new({
+#   'title' => 'The Gormenghast Trilogy',
+#   'format' => 'Hardback',
+#   'genre' => 'Fantasy',
+#   'cost' => 6.50,
+#   'price' => 19.99,
+#   'quantity' => 0,
+#   'author_id' => author12.id
+#   })
+# book15.save()
 
 book15 = Book.new({
   'title' => 'The Hitchhiker\'s Guide to the Galaxy',
@@ -353,16 +353,16 @@ book17 = Book.new({
   })
 book17.save()
 
-book18 = Book.new({
-  'title' => 'A Wizard of Earthsea',
-  'format' => 'Paperback',
-  'genre' => 'Fantasy',
-  'cost' => 2.00,
-  'price' => 8.99,
-  'quantity' => 0,
-  'author_id' => author16.id
-  })
-book18.save()
+# book18 = Book.new({
+#   'title' => 'A Wizard of Earthsea',
+#   'format' => 'Paperback',
+#   'genre' => 'Fantasy',
+#   'cost' => 2.00,
+#   'price' => 8.99,
+#   'quantity' => 0,
+#   'author_id' => author16.id
+#   })
+# book18.save()
 
 book19 = Book.new({
   'title' => 'Moby Dick',
@@ -408,16 +408,16 @@ book22 = Book.new({
   })
 book22.save()
 
-book23 = Book.new({
-  'title' => 'The Once and Future King',
-  'format' => 'Paperback',
-  'genre' => 'Fantasy',
-  'cost' => 4.25,
-  'price' => 10.99,
-  'quantity' => 3,
-  'author_id' => author21.id
-  })
-book23.save()
+# book23 = Book.new({
+#   'title' => 'The Once and Future King',
+#   'format' => 'Paperback',
+#   'genre' => 'Fantasy',
+#   'cost' => 4.25,
+#   'price' => 10.99,
+#   'quantity' => 3,
+#   'author_id' => author21.id
+#   })
+# book23.save()
 
 binding.pry
 nil
