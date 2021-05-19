@@ -1,4 +1,4 @@
-# Book Shop
+# Daguerro Books
 
 A stocktaking application with CRUD methodologies and RESTful routes, designed for use with data related to books.
 
